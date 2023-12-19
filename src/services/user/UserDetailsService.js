@@ -9,10 +9,11 @@ const UserDetailsService = async (Request, DataModel) => {
           username: 1,
           mobile: 1,
           photo: 1,
+          role: 1,
         },
       },
     ]);
-    return { status: "success", data: data };
+    return { status: "success", data: data[0] };
   } catch (error) {
     return { status: "fail", data: error.toString() };
   }

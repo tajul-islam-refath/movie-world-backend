@@ -11,6 +11,7 @@ const UserLoginService = async (Request, DataModel) => {
           username: 1,
           mobile: 1,
           photo: 1,
+          role: 1,
         },
       },
     ]);

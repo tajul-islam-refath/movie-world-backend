@@ -8,8 +8,7 @@ const UserLoginService = async (Request, DataModel) => {
         $project: {
           _id: 0,
           email: 1,
-          firstName: 1,
-          lastName: 1,
+          username: 1,
           mobile: 1,
           photo: 1,
         },

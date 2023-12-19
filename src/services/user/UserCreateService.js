@@ -1,4 +1,5 @@
 const UserCreateService = async (Request, DataModel) => {
+  console.log(Request.body);
   try {
     let PostBody = Request.body;
     let data = await DataModel.create(PostBody);

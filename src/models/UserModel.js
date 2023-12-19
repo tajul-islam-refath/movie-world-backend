@@ -6,6 +6,10 @@ const DataSchema = mongoose.Schema(
     mobile: { type: String },
     password: { type: String },
     photo: { type: String },
+    role: {
+      type: String,
+      default: "user",
+    },
     createdDate: { type: Date, default: Date.now() },
   },
   { versionKey: false }

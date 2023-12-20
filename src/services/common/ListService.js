@@ -1,6 +1,11 @@
-const ListService = async (DataModel) => {
+const ListService = async (DataModel, JoinStage) => {
   try {
-    let data = await DataModel.find();
+    let data;
+    if (JoinStage) {
+      data = await DataModel.aggregate([JoinStage]);
+    } else {
+      data = await DataModel.find();
+    }
     return { status: "success", data: data };
   } catch (error) {
     return { status: "fail", data: error };

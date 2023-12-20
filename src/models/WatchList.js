@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
     user: { type: String },
-    movie: { type: mongoose.Schema.Types.ObjectId },
+    movieId: { type: mongoose.Schema.Types.ObjectId },
     createdDate: { type: Date, default: Date.now() },
   },
   { versionKey: false }

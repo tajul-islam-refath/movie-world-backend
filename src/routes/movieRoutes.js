@@ -12,10 +12,22 @@ router.post(
   MovieController.addMovieRating
 );
 
+// watch list api
+router.get(
+  "/watchlist",
+  AuthVerifyMiddleware,
+  MovieController.getUserWatchlist
+);
 router.post(
-  "/movies/addToWatchList",
+  "/addToWatchList",
   AuthVerifyMiddleware,
   MovieController.addToWatchList
+);
+
+router.delete(
+  "/watchlist/:id",
+  AuthVerifyMiddleware,
+  MovieController.removeFromWatchList
 );
 
 module.exports = router;

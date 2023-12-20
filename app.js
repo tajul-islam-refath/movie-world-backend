@@ -35,6 +35,10 @@ readdirSync("./src/routes").map((r) =>
   app.use("/api/v1", require(`./src/routes/${r}`))
 );
 
+app.use("/", (req, res) => {
+  res.send("Welcome");
+});
+
 // Undefined Route Implement
 app.use("*", (req, res) => {
   res.status(404).json({ status: "fail", data: "Not Found" });
